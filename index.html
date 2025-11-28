@@ -4,36 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>⚡️ تصميم GIF حيوي</title> 
+    <title>🔫</title> 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-    /* ⚙️ التصميم الأساسي والمتحرك */
     *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-    body{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        min-height:100vh;
-        background-color:#1e1f22; /* لون داكن جديد */
-        overflow: hidden; /* لمنع ظهور شريط التمرير الناتج عن الخلفية المتحركة */
-    }
+    body{display:flex;justify-content:center;align-items:center;min-height:100vh;background-color:#2c2f33}
     .blurred-background{
         position:fixed;
         top:0;
         left:0;
         width:100%;
         height:100%;
-        /* GIF خلفية */
+        
+        /* رابط GIF الخلفية الأصلي */
         background-image:url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHB1bnY5ZmZzaGdpdW5kMXM3aXJjbHVtY3hiNm03MGtsZWo1NGpldSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IykxM8fCHZG5gE4PcR/giphy.gif');
+        
         background-size:cover;
         background-position:center;
-        filter:blur(8px) brightness(0.7); /* زيادة الوهج والعتامة للخلفية */
-        -webkit-filter:blur(8px) brightness(0.7);
+        filter:blur(5px);
+        -webkit-filter:blur(5px);
         z-index:1
     }
+    .profile-card{background-color:rgba(0,0,0,.6);border-radius:15px;width:90%;max-width:500px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);color:white;padding-bottom:20px;overflow:hidden;box-shadow:0 8px 32px 0 rgba(0,0,0,.37);position:relative;z-index:2}.card-header{height:100px;background-color:rgba(0,0,0,.5);position:relative}.profile-picture-container{position:relative;top:auto;left:auto;border-radius:50%;padding:3px;overflow:hidden;width:100px;height:100px;margin:-50px auto 20px auto;display:block}.profile-picture{width:100%;height:100%;border-radius:50%;object-fit:cover;background-image:url('https://i.postimg.cc/HLP3vv6C/f0a11a61b1a9153f4bbe86fdb521a8dc-(1).jpg');background-size:cover}.card-content{padding:0 20px;text-align:center;margin-top:0}.user-details{display:block;margin-top:0;margin-bottom:20px}.badges-info-wrapper{display:flex;flex-direction:column;align-items:center;margin-left:0;flex-grow:1}.badges{display:flex;justify-content:center;direction:ltr;gap:10px;background-color:rgba(255,255,255,.08);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);border-radius:20px;padding:5px 12px;width:fit-content;margin-bottom:5px;box-shadow:0 4px 10px rgba(0,0,0,.2)}.badge-icon{width:28px;height:28px;object-fit:contain;transition:transform .3s}.badge-icon:hover{transform:scale(1.1)}
     
-    /* 🪟 بطاقة الملف الشخصي (تأثير الزجاج محسّن) */
+    /* ❌ تم حذف جميع تأثيرات الوهج (Glow effects) هنا */
+    
+    .join-date{font-size:.8em;color:#b9bbbe;margin-bottom:0}.stats{display:flex;align-items:center;justify-content:center;font-size:1em;color:#fff;padding:10px 0;border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:20px;direction:ltr}.views{margin:0 5px}.location,.separator{display:none}.player-bar{display:flex;align-items:center;gap:10px;direction:ltr;margin-bottom:20px}.time{font-size:.8em;color:#b9bbbe;min-width:25px;text-align:center}.progress-container{flex-grow:1;height:8px;background-color:#2f3236;border-radius:5px;overflow:hidden;cursor:pointer}.progress-bar{height:100%;background-color:#43b581;border-radius:5px;width:0%;transition:width .2s linear}.play-button{background:none;border:none;color:white;font-size:1.2em;cursor:pointer}#realAudioPlayer{display:none}.play-button .fa-pause{display:none}.is-playing .fa-play{display:none}.is-playing .fa-pause{display:inline-block}</style>
+</head>
+<body>
+    <div class="blurred-background"></div>
+    <div class="profile-card">
+        <div class="card-header"></div>
+        <div class="card-content">
+            <div class="profile-picture-container">
+                <div class="profile-picture"></div>
+            </div>
+            <div class="user-details">
+                <div class="badges-info-wrapper">
+                    <div class="badges">
+                        <img src="https://i.ibb.co/601F90h/diamond.gif" class="badge-icon">
+                        <img src="https://i.ibb.co/hV72vL7/star.gif" class="badge-icon">
+                        <img src="https://i.ibb.co/L5k6YhR/candy.gif" class="badge-icon">
+                        <img src="https://i.ibb.co/2dW674x/popper.gif" class="badge-icon">
+                    </div>
+                    <p class="join-date">&#74;&#111;&#105;&#110;&#101;&#100; &#111;&#118;&#101;&#114; &#49; &#121;&#101;&#97;&#114; &#97;&#103;&#111;</p>
+                </div>
+            </div>
+            <div class="stats">
+                <span class="views"><i class="fas fa-eye"></i> <span id="viewCount">928</span></span>
+            </div>
+            <div class="player-bar" id="playerBar">
+                <span class="time" id="currentTime">0:00</span>
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar" id="progressBar" style="width:0%;"></div>
+                </div>
+                <span class="time" id="durationTime">0:00</span>
+                <button class="play-button" id="playButton"><i class="fas fa-play"></i><i class="fas fa-pause"></i></button>
+            </div>
+            <audio id="realAudioPlayer">
+                <source src="https://dn721804.ca.archive.org/0/items/mazzy-star-fade-into-you-imy-2-cover/Mazzy%20Star%20-%20Fade%20Into%20You%20%28imy2%20Cover%29.mp3" type="audio/mpeg">
+                &#1605;&#1578;&#1589;&#1601;&#1581;&#1603; &#1604;&#1575; &#1610;&#1583;&#1593;&#1605; &#1605;&#1588;&#1602;&#1604; &#1575;&#1604;&#1571;&#1594;&#1575;&#1606;&#1610;
+            </audio>
+        </div>
+    </div>
+<script>
+    const a=document.getElementById("realAudioPlayer"),b=document.getElementById("playButton"),c=document.getElementById("playerBar"),d=document.getElementById("progressBar"),e=document.getElementById("progressContainer"),f=document.getElementById("currentTime"),g=document.getElementById("durationTime"),h=document.getElementById("viewCount");function i(a){const b=Math.floor(a/60),c=Math.floor(a%60);return`${b}:${c<10?"0":""}${c}`}a.onloadedmetadata=function(){a.duration&&!isNaN(a.duration)?g.textContent=i(a.duration):g.textContent="0:00"},b.addEventListener("click",()=>{a.paused?(a.play(),c.classList.add("is-playing")):(a.pause(),c.classList.remove("is-playing"))}),a.addEventListener("timeupdate",()=>{const b=a.currentTime/a.duration*100;d.style.width=b+"%",f.textContent=i(a.currentTime)}),e.addEventListener("click",b=>{const c=b.offsetX,d=e.offsetWidth,f=a.duration;d&&!isNaN(f)&&(a.currentTime=c/d*f)}),a.addEventListener("ended",()=>{c.classList.remove("is-playing"),a.currentTime=0,d.style.width="0%",f.textContent="0:00"}),a.load();function j(){let a=localStorage.getItem("profileViews");a=null?928:parseInt(a),a++,localStorage.setItem("profileViews",a),h.textContent=a}window.onload=j;
+</script>
+</body>
+</html>
     .profile-card{
         background-color:rgba(25,25,25,.75);
         border-radius:20px;
